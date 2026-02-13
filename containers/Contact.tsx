@@ -1,4 +1,6 @@
-import { useTranslation } from 'next-i18next'
+'use client'
+
+import { useTranslations } from 'next-intl'
 import SectionTitle from '../components/SectionTitle'
 import { BsWhatsapp } from 'react-icons/bs'
 import { GrLinkedin } from 'react-icons/gr'
@@ -7,7 +9,7 @@ import CopyToClipboard from '../components/CopyToClipboard'
 import AnimatedShape from '../components/AnimatedShape'
 
 const Contact = () => {
-    const { t } = useTranslation('common')
+    const t = useTranslations()
 
     return (
         <section className="min-h-screen section-padding py-28 relative overflow-hidden" id="contact">

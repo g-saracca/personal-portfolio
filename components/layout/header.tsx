@@ -1,3 +1,5 @@
+'use client'
+
 // components
 import { useEffect, useState } from 'react'
 import { motion, useScroll } from 'motion/react'

@@ -1,5 +1,7 @@
+'use client'
+
 import { motion } from 'motion/react'
-import { useTranslation } from 'next-i18next'
+import { useTranslations } from 'next-intl'
 import { CgMouse } from 'react-icons/cg'
 import { HiChevronDown } from 'react-icons/hi'
 import AnimatedShape from '../components/AnimatedShape'
@@ -29,7 +31,7 @@ interface Props {
 }
 
 const Hero = ({ heroFields }: Props) => {
-    const { t } = useTranslation('common')
+    const t = useTranslations()
 
     return (
         <section className="min-h-screen flex flex-col justify-center section-padding" id="hero-intro">

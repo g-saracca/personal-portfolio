@@ -1,6 +1,8 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { useTranslation } from 'next-i18next'
+import { useTranslations } from 'next-intl'
 import { MdOutlineContentCopy } from 'react-icons/md'
 
 interface Props {
@@ -9,7 +11,7 @@ interface Props {
 
 const CopyToClipboard = ({ text }: Props) => {
     const [showTextCopied, setShowTextCopied] = useState(false)
-    const { t } = useTranslation('common')
+    const t = useTranslations()
 
     const handleCopy = () => {
         navigator.clipboard

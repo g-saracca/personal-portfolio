@@ -1,12 +1,14 @@
+'use client'
+
 import { useScroll } from 'motion/react'
-import { useTranslation } from 'next-i18next'
+import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { BsArrowUp } from 'react-icons/bs'
 
 const GoUpButton = () => {
     const { scrollYProgress } = useScroll()
     const [showButton, setShowButton] = useState(false)
-    const { t } = useTranslation('common')
+    const t = useTranslations()
 
     useEffect(() => {
         const unsubscribe = scrollYProgress.on('change', (latest) => {

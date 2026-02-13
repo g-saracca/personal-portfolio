@@ -1,4 +1,6 @@
-import { useTranslation } from 'next-i18next'
+'use client'
+
+import { useTranslations } from 'next-intl'
 import SectionTitle from '../components/SectionTitle'
 import WorkCard from '../components/WorkCard'
 import { motion } from 'motion/react'
@@ -9,7 +11,7 @@ interface Props {
 }
 
 const Work = ({ work }: Props) => {
-    const { t } = useTranslation('common')
+    const t = useTranslations()
 
     const listVariants = {
         visible: {

@@ -1,4 +1,6 @@
-import { useTranslation } from 'next-i18next'
+'use client'
+
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { BsGithub } from 'react-icons/bs'
 import { IoLinkOutline } from 'react-icons/io5'
@@ -12,7 +14,7 @@ interface Props {
 const WorkCard = ({ work }: Props) => {
     const { title, description, stackIcons, thumbnail, webUrl, repoUrl } = work
 
-    const { t } = useTranslation('common')
+    const t = useTranslations()
 
     return (
         <div className="isolate h-full">

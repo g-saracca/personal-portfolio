@@ -1,11 +1,13 @@
-import { useTranslation } from 'next-i18next'
+'use client'
+
+import { useTranslations } from 'next-intl'
 import { useColorThemeContext } from '../context/ThemeProvider'
 import { MdBrightnessLow, MdBrightnessHigh } from 'react-icons/md'
 
 const ColorSelector = () => {
     const { colorTheme, setColorTheme } = useColorThemeContext()
 
-    const { t } = useTranslation('common')
+    const t = useTranslations()
 
     const changeTheme = () => {
         setColorTheme(colorTheme === 'light' ? 'dark' : 'light')

@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import GoUpButton from '../GoUpButton'
 import Footer from './footer'

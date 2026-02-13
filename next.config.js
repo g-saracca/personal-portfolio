@@ -1,8 +1,10 @@
-const { i18n } = require('./next-i18next.config')
+const createNextIntlPlugin = require('next-intl/plugin')
 
-module.exports = {
+const withNextIntl = createNextIntlPlugin('./i18n/request.ts')
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
     reactStrictMode: true,
-    i18n,
     images: {
         remotePatterns: [
             {
@@ -12,3 +14,5 @@ module.exports = {
         ],
     },
 }
+
+module.exports = withNextIntl(nextConfig)

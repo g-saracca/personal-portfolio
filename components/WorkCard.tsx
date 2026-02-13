@@ -38,10 +38,9 @@ const WorkCard = ({ work }: Props) => {
                         <Image
                             src={`https:${thumbnail.fields.file.url}`}
                             alt={thumbnail.fields.title}
-                            layout="responsive"
-                            objectFit="cover"
-                            width={'100%'}
-                            height={60}
+                            width={600}
+                            height={360}
+                            style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
                         />
                     </div>
                     {/* LINKS CODE - WEB */}

@@ -1,4 +1,4 @@
-import { useScroll } from 'framer-motion'
+import { useScroll } from 'motion/react'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import { BsArrowUp } from 'react-icons/bs'
@@ -9,13 +9,14 @@ const GoUpButton = () => {
     const { t } = useTranslation('common')
 
     useEffect(() => {
-        return scrollYProgress.onChange((latest) => {
+        const unsubscribe = scrollYProgress.on('change', (latest) => {
             if (latest * 100 > 70) {
                 setShowButton(true)
             } else {
                 setShowButton(false)
             }
         })
+        return unsubscribe
     }, [scrollYProgress])
 
     const goUp = () => {

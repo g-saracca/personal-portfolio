@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'motion/react'
 import { useTranslation } from 'next-i18next'
 import { MdOutlineContentCopy } from 'react-icons/md'
-import propTypes from 'prop-types'
 
 interface Props {
     text: string
@@ -49,10 +48,6 @@ const CopyToClipboard = ({ text }: Props) => {
             </AnimatePresence>
         </div>
     )
-}
-
-CopyToClipboard.propTypes = {
-    text: propTypes.string.isRequired,
 }
 
 export default CopyToClipboard

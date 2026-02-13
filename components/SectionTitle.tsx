@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 interface Props {
     word: string
@@ -19,19 +19,19 @@ const SectionTitle = ({ word }: Props) => {
 
     const variant1 = {
         hidden: { opacity: 0, x: -200, y: -100 },
-        visible: { opacity: 1, x: 0, y: 0, transition: { type: 'spring', bounce: 0.2, duration: 1.5 } },
+        visible: { opacity: 1, x: 0, y: 0, transition: { type: 'spring' as const, bounce: 0.2, duration: 1.5 } },
     }
     const variant2 = {
         hidden: { opacity: 0, x: 10, y: 200 },
-        visible: { opacity: 1, x: 0, y: 0, transition: { type: 'spring', bounce: 0.2, duration: 1.5 } },
+        visible: { opacity: 1, x: 0, y: 0, transition: { type: 'spring' as const, bounce: 0.2, duration: 1.5 } },
     }
     const variant3 = {
         hidden: { opacity: 0, x: 250, y: -250 },
-        visible: { opacity: 1, x: 0, y: 0, transition: { type: 'spring', bounce: 0.2, duration: 1.5 } },
+        visible: { opacity: 1, x: 0, y: 0, transition: { type: 'spring' as const, bounce: 0.2, duration: 1.5 } },
     }
     const variant4 = {
         hidden: { opacity: 0, x: 100, y: 200 },
-        visible: { opacity: 1, x: 0, y: 0, transition: { type: 'spring', bounce: 0.2, duration: 1.5 } },
+        visible: { opacity: 1, x: 0, y: 0, transition: { type: 'spring' as const, bounce: 0.2, duration: 1.5 } },
     }
 
     const variants = [variant1, variant2, variant3, variant4]

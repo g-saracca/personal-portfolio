@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next'
 import SectionTitle from '../components/SectionTitle'
 import WorkCard from '../components/WorkCard'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { WorkFields } from '../types'
 
 interface Props {
@@ -22,7 +22,7 @@ const Work = ({ work }: Props) => {
     }
 
     const listCardVariants = {
-        visible: { opacity: 1, x: 0, y: 0, transition: { type: 'spring', bounce: 0.5, duration: 2 } },
+        visible: { opacity: 1, x: 0, y: 0, transition: { type: 'spring' as const, bounce: 0.5, duration: 2 } },
         hidden: { opacity: 0, x: 70, y: 100 },
     }
 

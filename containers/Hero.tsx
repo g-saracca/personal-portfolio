@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { useTranslation } from 'next-i18next'
 import { CgMouse } from 'react-icons/cg'
 import { HiChevronDown } from 'react-icons/hi'
@@ -16,11 +16,11 @@ const list = {
 }
 
 const fromLeft = {
-    visible: { opacity: 1, x: 0, transition: { type: 'spring', bounce: 0.5, duration: 2 } },
+    visible: { opacity: 1, x: 0, transition: { type: 'spring' as const, bounce: 0.5, duration: 2 } },
     hidden: { opacity: 0, x: -100 },
 }
 const fromBottom = {
-    visible: { opacity: 1, y: 0, transition: { type: 'spring', bounce: 0.5, duration: 2 } },
+    visible: { opacity: 1, y: 0, transition: { type: 'spring' as const, bounce: 0.5, duration: 2 } },
     hidden: { opacity: 0, y: 50 },
 }
 

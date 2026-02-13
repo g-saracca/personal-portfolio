@@ -1,6 +1,4 @@
 import { useTranslation } from 'next-i18next'
-import { HiOutlineMail } from 'react-icons/hi'
-import ContactForm from '../components/ContactForm'
 import SectionTitle from '../components/SectionTitle'
 import { BsWhatsapp } from 'react-icons/bs'
 import { GrLinkedin } from 'react-icons/gr'
@@ -19,16 +17,6 @@ const Contact = () => {
             </div>
             {/* Contacts */}
             <section className="flex flex-col gap-8 lg:flex-row lg:gap-16">
-                {/* Email Form */}
-                <div className="w-full py-4 lg:w-1/2 lg:max-w-xl">
-                    <h3 className="flex items-center mb-4 text-xl lg:text-3xl gap-4">
-                        {t('contact.send_message')}
-                        <HiOutlineMail className="ml-2 text-sky-600 dark:text-sky-400" size={'1.10em'} />
-                    </h3>
-
-                    <ContactForm />
-                </div>
-
                 {/* Email - Whatsapp - Linkedin  */}
                 <address className="flex flex-col gap-4 lg:pt-8 lg:gap-8">
                     {/* Whatsapp */}

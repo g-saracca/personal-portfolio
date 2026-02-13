@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import NextIcon from '../../public/images/nextjs-icon.svg'
 import TsIcon from '../../public/images/typescript-icon-round.svg'
 import FramerIcon from '../../public/images/framer.svg'
@@ -21,7 +21,7 @@ const Footer = () => {
     }
 
     const itemVariants = {
-        visible: { opacity: 1, y: 0, transition: { type: 'spring', bounce: 0.4, duration: 1 } },
+        visible: { opacity: 1, y: 0, transition: { type: 'spring' as const, bounce: 0.4, duration: 1 } },
         hidden: { opacity: 0, y: -100 },
     }
 

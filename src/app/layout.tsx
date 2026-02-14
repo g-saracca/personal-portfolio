@@ -16,10 +16,33 @@ const sourceCodePro = Source_Code_Pro({
     variable: '--font-source-code-pro',
 })
 
+const siteUrl = 'https://personal-portfolio-germansaracca.vercel.app'
+
 export const metadata: Metadata = {
-    title: 'Germán Saracca Portfolio',
-    description: 'Germán Saracca portfolio',
+    metadataBase: new URL(siteUrl),
+    title: 'Germán Saracca | Frontend Developer Portfolio',
+    description:
+        'Frontend developer specializing in React, Next.js, and TypeScript. Explore my projects, skills, and experience building modern web applications.',
     authors: [{ name: 'Germán Saracca' }],
+    keywords: ['frontend developer', 'React', 'Next.js', 'TypeScript', 'portfolio', 'web developer'],
+    openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: siteUrl,
+        siteName: 'Germán Saracca Portfolio',
+        title: 'Germán Saracca | Frontend Developer Portfolio',
+        description:
+            'Frontend developer specializing in React, Next.js, and TypeScript. Explore my projects, skills, and experience building modern web applications.',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Germán Saracca | Frontend Developer Portfolio',
+        description:
+            'Frontend developer specializing in React, Next.js, and TypeScript. Explore my projects, skills, and experience.',
+    },
+    alternates: {
+        canonical: siteUrl,
+    },
     verification: {
         google: process.env.GOOGLE_SITE_VERIFICATION_ID,
     },
@@ -35,6 +58,20 @@ export default async function LocaleLayout({ children }: Props) {
     return (
         <html lang={locale} suppressHydrationWarning>
             <body className={sourceCodePro.variable}>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'Person',
+                            name: 'Germán Saracca',
+                            url: siteUrl,
+                            jobTitle: 'Frontend Developer',
+                            email: 'gersaracca@gmail.com',
+                            sameAs: ['https://www.linkedin.com/in/german-saracca/'],
+                        }),
+                    }}
+                />
                 <Script
                     strategy="afterInteractive"
                     src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}

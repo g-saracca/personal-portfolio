@@ -56,7 +56,7 @@ const Hero = ({ heroFields }: Props) => {
 
                 {/* PDF */}
                 <motion.div variants={fromBottom} className="btn-wrapper">
-                    <a className="btn" href={heroFields.pdf} target="_blank" rel="noreferrer">
+                    <a className="btn" href="/German_Saracca_CV.pdf" download>
                         {t('hero.download_pdf')}
                     </a>
                 </motion.div>

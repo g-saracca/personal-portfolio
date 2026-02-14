@@ -1,7 +1,7 @@
 {
     "hero": {
         "greeting_prepend": "Hey there! My name is",
-        "download_pdf": "Download pdf"
+        "download_pdf": "Download Resume"
     },
     "work": {
         "title": "Work",

@@ -4,7 +4,17 @@ import { ColorThemeProvider } from '../context/ThemeProvider'
 import Layout from '../components/layout'
 import Script from 'next/script'
 
+import { getLocale } from 'next-intl/server'
+
+import { Source_Code_Pro } from 'next/font/google'
+
 import '../styles/globals.css'
+
+const sourceCodePro = Source_Code_Pro({
+    subsets: ['latin'],
+    weight: ['300', '400', '500', '600'],
+    variable: '--font-source-code-pro',
+})
 
 export const metadata: Metadata = {
     title: 'Germán Saracca Portfolio',
@@ -17,24 +27,14 @@ export const metadata: Metadata = {
 
 interface Props {
     children: React.ReactNode
-    params: Promise<{ locale: string }>
 }
 
-export default async function LocaleLayout({ children, params }: Props) {
+export default async function LocaleLayout({ children }: Props) {
+    const locale = await getLocale()
+
     return (
-        <html
-            // lang={locale}
-            suppressHydrationWarning
-        >
-            <head>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600&display=swap"
-                    rel="stylesheet"
-                />
-            </head>
-            <body>
+        <html lang={locale} suppressHydrationWarning>
+            <body className={sourceCodePro.variable}>
                 <Script
                     strategy="afterInteractive"
                     src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}

@@ -1,20 +1,15 @@
 import client from '../../configs/contentfulClient'
-import { setRequestLocale } from 'next-intl/server'
+import { getLocale } from 'next-intl/server'
 import Hero from '../containers/Hero'
 import Work from '../containers/Work'
 import Contact from '../containers/Contact'
 import LoadingPage from '../components/LoadingPage'
 import { IHero, IWorks, WorkFields } from '../types'
 
-export const revalidate = 10
+export const revalidate = 30
 
-interface Props {
-    params: Promise<{ locale: string }>
-}
-
-export default async function HomePage({ params }: Props) {
-    const { locale } = await params
-    setRequestLocale(locale)
+export default async function HomePage() {
+    const locale = await getLocale()
 
     const contentLocale = locale === 'es' ? 'es-AR' : 'en-US'
 
@@ -22,6 +17,7 @@ export default async function HomePage({ params }: Props) {
         content_type: 'portfolioHero',
         locale: contentLocale,
     })
+
     const projects = await client.getEntries({
         content_type: 'portfolioProject',
         locale: contentLocale,

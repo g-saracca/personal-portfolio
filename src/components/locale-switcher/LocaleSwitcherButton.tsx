@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
-import { MouseEvent, useTransition } from 'react'
+import { useTransition } from 'react'
 import { MdLanguage } from 'react-icons/md'
 import { LANG_LOCALE_COOKIE_NAME } from '../../i18n/constants'
 import type { SupportedLocale } from '../../i18n/constants'
@@ -37,7 +37,7 @@ export default function LocaleSwitcherSelect({ currentLocale }: Props) {
             disabled={isPending}
         >
             <MdLanguage size="1em" />
-            <span className="text-sm sm:text-base xl:text-lg" aria-hiden>
+            <span className="text-sm sm:text-base xl:text-lg" aria-hidden="true">
                 {currentLocale === 'en' ? 'EN' : 'ES'}
             </span>
             <span className="sr-only">

@@ -4,7 +4,7 @@ import React, { createContext, useState, useEffect, useContext } from 'react'
 
 type ThemeContextType = {
     colorTheme: string
-    setColorTheme: (arg: string) => void
+    setColorTheme: (_arg: string) => void
 }
 
 // Create a context for color theme provider
@@ -22,20 +22,19 @@ export const ColorThemeProvider = ({ children }: Props) => {
 
     const colors = ['light', 'dark']
 
-    // Set the color theme based on the user preference
+    // Set the color theme based on the user preference and listener
     useEffect(() => {
-        setColorTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-    }, [])
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
-    // Client-side-only code
-    const darkMode = typeof window !== 'undefined' ? window.matchMedia('(prefers-color-scheme: dark)') : null
-
-    useEffect(() => {
-        if (darkMode) {
-            darkMode.onchange = () => {
-                setColorTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-            }
+        const handleChange = () => {
+            setColorTheme(mediaQuery.matches ? 'dark' : 'light')
         }
+
+        // Initial check
+        handleChange()
+
+        mediaQuery.addEventListener('change', handleChange)
+        return () => mediaQuery.removeEventListener('change', handleChange)
     }, [])
 
     useEffect(() => {

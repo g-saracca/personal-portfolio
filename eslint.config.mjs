@@ -1,20 +1,20 @@
-import { dirname } from 'path'
-import { fileURLToPath } from 'url'
-import { FlatCompat } from '@eslint/eslintrc'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-})
+import nextConfig from 'eslint-config-next/core-web-vitals'
+import eslintConfigPrettier from 'eslint-config-prettier'
 
 const eslintConfig = [
-    ...compat.extends('next/core-web-vitals'),
-    ...compat.extends('prettier'),
+    ...nextConfig,
+    eslintConfigPrettier,
     {
         rules: {
-            'no-unused-vars': 'error',
+            'no-unused-vars': [
+                'warn',
+                {
+                    vars: 'all',
+                    varsIgnorePattern: '^_',
+                    args: 'after-used',
+                    argsIgnorePattern: '^_',
+                },
+            ],
         },
     },
 ]

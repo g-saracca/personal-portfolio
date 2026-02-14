@@ -33,12 +33,14 @@ export const metadata: Metadata = {
         title: 'Germán Saracca | Frontend Developer Portfolio',
         description:
             'Frontend developer specializing in React, Next.js, and TypeScript. Explore my projects, skills, and experience building modern web applications.',
+        images: [{ url: '/images/profile_avatar.png', width: 1200, height: 630 }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Germán Saracca | Frontend Developer Portfolio',
         description:
             'Frontend developer specializing in React, Next.js, and TypeScript. Explore my projects, skills, and experience.',
+        images: [{ url: '/images/profile_avatar.png', width: 1200, height: 630 }],
     },
     alternates: {
         canonical: siteUrl,

@@ -1,15 +1,10 @@
 import client from '../../configs/contentfulClient'
 import { setRequestLocale } from 'next-intl/server'
-import { routing } from '../i18n/routing'
 import Hero from '../containers/Hero'
 import Work from '../containers/Work'
 import Contact from '../containers/Contact'
 import LoadingPage from '../components/LoadingPage'
 import { IHero, IWorks, WorkFields } from '../types'
-
-export function generateStaticParams() {
-    return routing.locales.map((locale) => ({ locale }))
-}
 
 export const revalidate = 10
 

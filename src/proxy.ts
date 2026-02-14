@@ -1,7 +1,8 @@
-import createMiddleware from 'next-intl/middleware'
-import { routing } from './src/i18n/routing'
+import { NextRequest, NextResponse } from 'next/server'
 
-export const proxy = createMiddleware(routing)
+export function proxy(_request: NextRequest) {
+    return NextResponse.next()
+}
 
 export const config = {
     // Match all pathnames except for

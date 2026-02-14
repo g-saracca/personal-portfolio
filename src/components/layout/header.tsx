@@ -1,10 +1,9 @@
 'use client'
 
-// components
 import { useEffect, useState } from 'react'
 import { motion, useScroll } from 'motion/react'
 import ColorSelector from '../ColorSelector'
-import LanguageSelector from '../LanguageSelector'
+import LocaleSwitcher from '../locale-switcher/LocaleSwitcher'
 
 const Header = () => {
     const { scrollYProgress } = useScroll()
@@ -34,7 +33,7 @@ const Header = () => {
                     <ColorSelector />
                 </li>
                 <li>
-                    <LanguageSelector />
+                    <LocaleSwitcher />
                 </li>
             </ul>
         </header>

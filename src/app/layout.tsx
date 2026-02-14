@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { getMessages, setRequestLocale } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
 import { ColorThemeProvider } from '../context/ThemeProvider'
 import Layout from '../components/layout'
@@ -22,12 +21,6 @@ interface Props {
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
-    // const { locale } = await params
-
-    // setRequestLocale(locale)
-
-    const messages = await getMessages()
-
     return (
         <html
             // lang={locale}
@@ -58,7 +51,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                     `,
                     }}
                 />
-                <NextIntlClientProvider messages={messages}>
+                <NextIntlClientProvider>
                     <ColorThemeProvider>
                         <Layout>{children}</Layout>
                     </ColorThemeProvider>

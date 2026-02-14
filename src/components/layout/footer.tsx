@@ -2,11 +2,11 @@
 
 import Image from 'next/image'
 import { motion } from 'motion/react'
-import NextIcon from '../../public/images/nextjs-icon.svg'
-import TsIcon from '../../public/images/typescript-icon-round.svg'
-import FramerIcon from '../../public/images/framer.svg'
-import TailwindIcon from '../../public/images/tailwindcss-icon.svg'
-import ContentfulIcon from '../../public/images/contentful.svg'
+import NextIcon from '../../../public/images/nextjs-icon.svg'
+import TsIcon from '../../../public/images/typescript-icon-round.svg'
+import FramerIcon from '../../../public/images/framer.svg'
+import TailwindIcon from '../../../public/images/tailwindcss-icon.svg'
+import ContentfulIcon from '../../../public/images/contentful.svg'
 import { useTranslations } from 'next-intl'
 
 const Footer = () => {

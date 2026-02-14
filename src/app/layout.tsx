@@ -1,13 +1,11 @@
 import type { Metadata } from 'next'
-import { routing } from '../../i18n/routing'
-import { notFound } from 'next/navigation'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
-import { ColorThemeProvider } from '../../context/ThemeProvider'
-import Layout from '../../components/layout'
+import { ColorThemeProvider } from '../context/ThemeProvider'
+import Layout from '../components/layout'
 import Script from 'next/script'
 
-import '../../styles/globals.css'
+import '../styles/globals.css'
 
 export const metadata: Metadata = {
     title: 'Germán Saracca Portfolio',
@@ -18,29 +16,23 @@ export const metadata: Metadata = {
     },
 }
 
-export function generateStaticParams() {
-    return routing.locales.map((locale) => ({ locale }))
-}
-
 interface Props {
     children: React.ReactNode
     params: Promise<{ locale: string }>
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
-    const { locale } = await params
+    // const { locale } = await params
 
-    // Validate that the incoming `locale` parameter is valid
-    if (!routing.locales.includes(locale as 'en' | 'es')) {
-        notFound()
-    }
-
-    setRequestLocale(locale)
+    // setRequestLocale(locale)
 
     const messages = await getMessages()
 
     return (
-        <html lang={locale} suppressHydrationWarning>
+        <html
+            // lang={locale}
+            suppressHydrationWarning
+        >
             <head>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

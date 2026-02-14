@@ -21,7 +21,7 @@ export default function LanguageSelector() {
             onClick={changeLocale}
             aria-label={locale === 'en' ? t('global.change_to_spanish') : t('global.change_to_english')}
         >
-            <MdLanguage size="1em" />
+            {/* <MdLanguage size="1em" /> */}
             <span className="text-sm sm:text-base xl:text-lg">{locale === 'en' ? 'EN' : 'ES'}</span>
             <span className="sr-only">
                 {locale === 'en' ? t('global.change_to_spanish') : t('global.change_to_english')}

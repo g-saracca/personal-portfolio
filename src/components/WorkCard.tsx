@@ -42,7 +42,7 @@ const WorkCard = ({ work }: Props) => {
                             alt={thumbnail.fields.title}
                             width={600}
                             height={360}
-                            style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+                            className="w-full aspect-video object-cover"
                         />
                     </div>
                     {/* LINKS CODE - WEB */}

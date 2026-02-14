@@ -42,31 +42,66 @@ const Footer = () => {
                 >
                     <motion.li className="flex items-center gap-2" variants={itemVariants}>
                         <div className="grid content-center bg-white rounded-full p-1">
-                            <Image src={NextIcon} width={30} height={30} alt="" aria-hidden="true" />
+                            <Image
+                                src={NextIcon}
+                                width={30}
+                                height={30}
+                                className="size-[30px]"
+                                alt=""
+                                aria-hidden="true"
+                            />
                         </div>
                         <p className="font-semibold text-lg">Next JS</p>
                     </motion.li>
                     <motion.li className="flex items-center gap-2" variants={itemVariants}>
                         <div className="grid content-center bg-white rounded-full p-1">
-                            <Image src={TsIcon} width={30} height={30} alt="" aria-hidden="true" />
+                            <Image
+                                src={TsIcon}
+                                width={30}
+                                height={30}
+                                className="size-[30px]"
+                                alt=""
+                                aria-hidden="true"
+                            />
                         </div>
                         <p className="font-semibold text-lg">Typescript</p>
                     </motion.li>
                     <motion.li className="flex items-center gap-2" variants={itemVariants}>
                         <div className="grid content-center bg-white rounded-full p-1">
-                            <Image src={FramerIcon} width={30} height={30} alt="" aria-hidden="true" />
+                            <Image
+                                src={FramerIcon}
+                                width={30}
+                                height={30}
+                                className="size-[30px]"
+                                alt=""
+                                aria-hidden="true"
+                            />
                         </div>
                         <p className="font-semibold text-lg">Framer Motion</p>
                     </motion.li>
                     <motion.li className="flex items-center gap-2" variants={itemVariants}>
                         <div className="grid content-center bg-white rounded-full p-1">
-                            <Image src={TailwindIcon} width={30} height={30} alt="" aria-hidden="true" />
+                            <Image
+                                src={TailwindIcon}
+                                width={30}
+                                height={30}
+                                className="size-[30px]"
+                                alt=""
+                                aria-hidden="true"
+                            />
                         </div>
                         <p className="font-semibold text-lg">Tailwind CSS</p>
                     </motion.li>
                     <motion.li className="flex items-center gap-2" variants={itemVariants}>
                         <div className="grid content-center bg-white rounded-full p-1">
-                            <Image src={ContentfulIcon} width={30} height={30} alt="" aria-hidden="true" />
+                            <Image
+                                src={ContentfulIcon}
+                                width={30}
+                                height={30}
+                                className="size-[30px]"
+                                alt=""
+                                aria-hidden="true"
+                            />
                         </div>
                         <p className="font-semibold text-lg">Contentful CMS</p>
                     </motion.li>
